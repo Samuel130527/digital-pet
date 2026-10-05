@@ -113,3 +113,55 @@ lib/
 │   └── pet_game_service.dart
 └── screens/
     └── pet_screen.dart
+
+
+## Advanced Features
+
+This project implements the following Graduate pathway advanced features:
+
+1. Animated pet feedback
+   - The pet uses AnimatedScale to provide visual feedback during interaction.
+
+2. Animated mood/message changes
+   - AnimatedSwitcher and TweenAnimationBuilder are used to animate changes in the pet's mood and feedback messages.
+
+3. Accessibility and reduced motion
+   - The application checks MediaQuery.of(context).disableAnimations and reduces animation behavior when reduced motion is enabled.
+
+## Feature-to-Outcome Rubric Map
+
+| Feature | Implementation | Outcome |
+|---|---|---|
+| Happiness and hunger meters | PetState and PetScreen | Users can monitor the pet's current state |
+| Mood classification | Happy, Neutral, and Unhappy thresholds | Pet behavior is visually understandable |
+| ColorFiltered mood tint | Mood-dependent color filter | Pet appearance reflects happiness |
+| Editable pet name | Name editing dialog | User can personalize the pet |
+| Feed interaction | PetGameService.feed() | Hunger and happiness change according to game rules |
+| Play interaction | PetGameService.play() | Happiness, hunger, and energy change |
+| Run interaction | PetGameService.run() | Additional activity with energy cost |
+| Sleep interaction | PetGameService.sleep() | Energy recovery and state changes |
+| Hunger timer | 30-second periodic timer | Pet state changes automatically over time |
+| Win timer | Three-minute happiness timer | Sustained high happiness produces a win |
+| Loss condition | Hunger 100 + happiness <= 10 | Poor pet care produces a loss |
+| Reset | PetGameService.reset() | Game can be restarted |
+| Meter clamping | PetState.copyWith() | Values remain between 0 and 100 |
+| Automated tests | Unit and widget tests | Game rules and state transitions are verified |
+| Separation of concerns | PetState, PetGameService, PetScreen | Game rules are separated from UI rendering |
+| Reduced motion | MediaQuery accessibility check | Animations can be reduced for accessibility |
+
+## Testing
+
+The project includes automated tests for the pet game rules and application behavior.
+
+### Test Command
+
+Run:
+
+```bash
+flutter test
+
+## screenshots
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
